@@ -1,0 +1,520 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <title>CSC1026 project</title>
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <!-- nav bar start here - using from bootstrap framework -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+         </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+            <a class="navbar-brand" href="#">Drag &amp; Drop Editor</a>
+            <button type="button" class="btn btn-light" data-toggle="modal" data-target=".bd-example-modal-lg">Instructions</button>
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Drag &amp; Drop editor instructions</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            <video controls style="max-width: 100%;height: auto;">
+  <source src="instructions.mp4" type="video/mp4">
+
+  Your browser does not support the video tag.
+</video>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            </ul>
+            <div class="form-inline my-2 my-lg-0">
+                <button id="print" class="btn btn-outline-success my-2 my-sm-0 float-right" style="margin-top: 5px">Print Layout</button>
+            </div>
+        </div>
+    </nav>
+    <!-- nav bar end here - using bootstrap framework -->
+
+    <!-- side bar start here - using bootstrap framework -->
+    <div class="container-fluid">
+        <div class="row">
+            <div id="noprint" class="col-sm-2 col-md-2 ">
+                <div id="accordion">
+                    <div class="panel">
+                        <div class="" id="headingOne">
+                            <h5 class="mb-0">
+                                <a class="btn panel-title collapsed" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                           Grid System
+                           </a>
+                            </h5>
+                        </div>
+                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div id="drag4" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>12</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag5" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>6 6</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 box">
+                                                        </div>
+                                                        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag552" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>5 5 2</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 box">
+                                                        </div>
+                                                        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5 box">
+                                                        </div>
+                                                        <div class="col-xs-2 col-sm-2 col-md-2 col-lg-2 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag634" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>8 4</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 box">
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag6" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>4 8</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box">
+                                                        </div>
+                                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag7" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>9 3</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box">
+                                                        </div>
+                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag8" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>3 9</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box">
+                                                        </div>
+                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag923" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>4 4 4</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row">
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box">
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box">
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 box">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag101" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns icon"></i>Template 1</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row" style="text-align: center">
+                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box">
+                                                            <div style="height: 80vh">Sidebar</div>
+                                                        </div>
+                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box">
+                                                            <div style="height: 80vh">Main Content</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag104" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-columns  icon"></i>Template 2</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <div class="row" style="text-align: center">
+                                                        <div class="box" style="width: 100%">Navigation Bar</div>
+                                                        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 box">
+                                                            <div style="height: 70vh">Sub content</div>
+                                                        </div>
+                                                        <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9 box">
+                                                            <div style="height: 70vh">Main Content</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="" id="headingTwo">
+                            <h5 class="mb-0">
+                                <a class="btn panel-title collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                           Headings
+                           </a>
+                            </h5>
+                        </div>
+                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div id="drag31" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Heading 1</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <h1>Newcastle University</h1>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag32" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Heading 2</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <h2>Newcastle University</h2>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag33" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Heading 3</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <h3>Newcastle University</h3>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag34" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Heading 4</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <h4>Newcastle University</h4>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag35" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Heading 5</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <h5>Newcastle University</h5>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="" id="headingThree">
+                            <h5 class="mb-0">
+                                <a class="btn panel-title collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                           Text
+                           </a>
+                            </h5>
+                        </div>
+                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div id="drag2" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-paragraph  icon"></i>Paragraph</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fa fa-trash-alt"></i></a>
+                                                    <p>Newcastle: a World-class Civic University As a world-class civic university Newcastle's research is focused on addressing some of society's most pressing issues. The primary feature of a civic university is its sense of purpose – an understanding of not just what it is good at, but what it is good for. A civic university sees itself as delivering benefits to individuals, organisations and to society as a whole. It means putting academic knowledge, creativity and expertise to work, to come up with innovations and solutions that make a difference. At Newcastle University, our combination of academic excellence on the supply side and a range of regional and global challenges on the demand side, has led to a reinvention of the traditional idea of a civic university. Read more about Newcastle University's role as a civic university. The Impact of a World-Class Civic University 'The Impact of a World-Class Civic University' features interviews with some of our leading academics. The case studies show we apply academic knowledge to come up with solutions that make a difference.</p>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag22" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-table  icon"></i>Table</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fa fa-trash-alt"></i></a>
+                                                    <table class="table">
+
+                                                        <tr>
+                                                            <th>[Title]</th>
+                                                            <th>[Title]</th>
+                                                            <th>[Title]</th>
+                                                        </tr>
+
+
+
+                                                        <tr>
+                                                            <td>[data]</td>
+                                                            <td>[data]</td>
+                                                            <td>[data]</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>[data]</td>
+                                                            <td>[data]</td>
+                                                            <td>[data]</td>
+                                                        </tr>
+
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="" id="headingFive">
+                            <h5 class="mb-0">
+                                <a class="btn panel-title collapsed" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                           Form and Input
+                           </a>
+                            </h5>
+                        </div>
+                        <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div id="drag3243" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-font icon"></i>Textarea</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <textarea></textarea>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag3" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-keyboard  icon"></i>Input</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <input type="text" class="form-control" value="" required="required" pattern="" title="">
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag334" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-tags  icon"></i>Label</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <label class="col-sm-2">Label</label>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="dragform" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fab fa-wpforms icon"></i>Form</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt  "></i></a>
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputEmail1">Email address</label>
+                                                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label for="exampleInputPassword1">Password</label>
+                                                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                                        </div>
+                                                        <div class="form-check">
+                                                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                                                            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                                        </div>
+                                                        <button type="button" class="btn btn-primary">Submit</button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel">
+                        <div class="" id="headingFour">
+                            <h5 class="mb-0">
+                                <a class="btn panel-title collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                           Multimedia
+                           </a>
+                            </h5>
+                        </div>
+                        <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                            <div class="card-body">
+                                <table class="table">
+                                    <tr>
+                                        <td>
+                                            <div id="drag1" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fas fa-images  icon"></i>Image</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt"></i></a>
+
+                                                    <img style="max-width: 100%; height: auto;" alt="image failed loaded" src="https://www.ncl.ac.uk/gomobileassets/img/logo.svg">
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag121" ondragstart="drag(event)">
+                                                <div class="description"> <i class="fab fa-youtube  icon"></i>Youtube</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt"></i></a>
+                                                    <div class="embed-responsive embed-responsive-16by9">
+                                                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZCvdQKIIxkc" allowfullscreen></iframe>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div id="drag134" ondragstart="drag(event)">
+                                                <div class="description"> <i class="far fa-file-audio icon"></i>Audio</div>
+                                                <div class="view">
+                                                    <a class="deletebtn" onclick="removeElm(event)" href="#"><i class="fas fa-trash-alt"></i></a>
+                                                    <audio controls>
+                                             <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+                                             <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+                                             Your browser does not support the audio element.
+                                          </audio>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- side bar end here - using bootstrap framework -->
+
+
+            <div class="col-sm-10 col-md-10 ">
+                <!-- drag drop area start-->
+                <div id="div1" class="container-fluid" ondrop="drop(event)" ondragover="allowDrop(event)">
+
+                </div>
+                <!-- drag drop area end-->
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script src="dragdrop.js"></script>
+
+</body>
+
+</html>
